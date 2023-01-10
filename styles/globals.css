@@ -109,3 +109,8 @@ a {
     color-scheme: dark;
   }
 }
+
+img {
+  height: inherit !important ;
+  width:  100% !important ;
+}
