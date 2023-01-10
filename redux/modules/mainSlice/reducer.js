@@ -4,16 +4,22 @@ import * as CONSTANTS from './constants' ;
 
 const getInitialState = () =>{
     return {
+        jsonData : {} ,
+        search_filter_result : {} ,
         searchValue : '' ,
         currentPage : 1 ,
-        jsonData : {}
     }
 }
 
 export default handleActions({
-    [requestSuccess(CONSTANTS.GET_JSON_DATA)] : (state , {payload}) => ({
+    [CONSTANTS.SET_JSON_DATA] : (state , action) => ({
         ...state ,
-        jsonData : payload
+        jsonData : action.payload
+    })
+    ,
+    [CONSTANTS.SET_RESULT] : (state , action) => ({
+        ...state ,
+        search_filter_result : action.payload
     })
     ,
     [CONSTANTS.SET_SEARCH_RESULT] : (state , action) => ({

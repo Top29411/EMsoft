@@ -1,11 +1,10 @@
 import axios from 'axios'
 import { call, put } from 'redux-saga/effects'
 import { get } from 'lodash'
-
 import { requestFail, requestPending, requestSuccess } from './request'
 
 export default ({
-  type ,
+  type,
   method, // one of 'get', 'post', 'put', 'delete'
   path,
   success,
